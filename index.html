@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music On the Go</title>
+    <link rel="icon" href="Music ON THE GO.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="loadingScreen" class="loading-screen">
+        <img src="Music ON THE GO.png" alt="Loading..." class="loading-image">
+    </div>
+
+    
+    <div class="player-container">
+        
+        <div class="sidebar" id="sidebar">
+            <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Sidebar">×</button>
+            <div class="profile">
+                <img src="Music ON THE GO.png" alt="Profile Picture" class="profile-pic">
+                <p id="username">Username</p>
+            </div>
+            <a href="#" id="profileLink" data-toggle="modal" data-target="#profileModal">Profile</a>
+            <a href="#" id="logoutLink">Logout</a>
+        </div>
+
+        
+        <div class="content">
+            <button class="sidebar-toggle-btn" id="sidebarToggleBtn" aria-label="Open Sidebar">☰</button>
+            <img src="Music ON THE GO.png" alt="Music On the Go Logo" class="logo">
+            <h1><b>MUSIC ON THE GO</b></h1>
+            <p>Your favorite music, Anytime, Anywhere.</p>
+            <div class="search-bar-container">
+                <input type="text" class="form-control" id="searchBar" placeholder="Search for a song...">
+            </div>
+            <ul class="search-results list-group" id="searchResults"></ul>
+            <audio id="audioPlayer" class="w-100" hidden>
+                <source src="" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="current-song" id="currentSong">Now Playing: None</div>
+             
+            <div class="progress-container">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="progressBar" value="0" min="0" step="1">
+                <span id="duration">0:00</span>
+            </div>
+            <div class="controls">
+                <button id="prevBtn" aria-label="Previous Song">⏮️</button>
+                <button id="playPauseBtn" aria-label="Play/Pause">⏯️</button>
+                <button id="nextBtn" aria-label="Next Song">⏭️</button>
+            </div>
+            <ul class="playlist list-group" id="playlist">
+               
+            </ul>
+            <footer><b>You Can Play Your Favorite Music<br>Created By: Axle Deleon</b></footer>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Profile Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="profileForm">
+                        <div class="form-group">
+                            <label for="profileUsername">Username</label>
+                            <input type="text" class="form-control" id="profileUsername">
+                        </div>
+                        <div class="form-group">
+                            <label for="profileEmail">Email</label>
+                            <input type="email" class="form-control" id="profileEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="profilePassword">Password</label>
+                            <input type="password" class="form-control" id="profilePassword">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveProfileBtn">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     
+    <script src="jav.js"></script>
+</body>
+</html>
